@@ -1,6 +1,6 @@
 <?php
 class client{
     use getInstance;
-    function __construct(public $Identification,public $Full_Name, public $Email, public $Address, public $Phone){}
+    function __construct(private $Identification,public $Full_Name, public $Email, private $Address, private $Phone){}
 }
 ?>
