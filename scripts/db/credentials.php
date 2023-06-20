@@ -1,6 +1,12 @@
 <?php
-class credentiasl{
-    use getInstance;
-    function __construct(){}
+abstract class credentials{
+    
+    protected $host = "172.16.48.210";
+    private $user = "sputnik";
+    private $password = "Sp3tn1kC@";
+    protected $dbname = "db_hunter_facture_josCabrejo";
+    public function __get($name){
+        return $this->{$name};
+    }
 }
 ?>
