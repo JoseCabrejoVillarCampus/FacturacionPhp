@@ -62,6 +62,7 @@ INSERT INTO tb_bill(fk_identificacion, fk_id_seller, fk_id_product) VALUES (123,
 
 /*
 ?consulta todo lo de la base de datos 
+
 */
 SELECT * FROM tb_client;
 /*
