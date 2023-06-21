@@ -7,7 +7,7 @@ class client extends connect
     private $queryDelete = 'DELETE FROM tb_client WHERE identificacion = :cc';
     private $message;
     use getInstance;
-    function __construct(private $identificacion, public $full_name, public $email, private $address, private $phone)
+    function __construct(private $identificacion = 1, public $full_name = 1, public $email = 1, private $address = 1, private $phone = 1)
     {
         parent::__construct();
     }
@@ -33,7 +33,7 @@ class client extends connect
         try {
             $res = $this->conx->prepare($this->queryGetAll);
             $res->execute();
-            $this->message = ["Code" => 200, "Message" => $res->fetchAll(PDO::FETCH_BOUND)];
+            $this->message = ["Code" => 200, "Message" => $res->fetchAll(PDO::FETCH_ASSOC)];
         } catch (\PDOException $e) {
             $this->message = ["Code" => $e->getCode(), "Message" => $res->errorInfo()[2]];
         } finally {
